@@ -1,0 +1,11 @@
+# macOS
+.DS_Store
+
+# scratch / tooling used to build the mirror (not part of the site)
+_mirror_work/
+
+# local scratch
+*.log
+
+# editor/agent workspace metadata
+.zcode/

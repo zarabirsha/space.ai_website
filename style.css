@@ -259,7 +259,83 @@ p {
   max-width: 640px;
   margin: 0 auto 56px;
   text-align: center;
-  font-size: 18px;
+  font-family: var(--font-display);   /* the live site sets its copy in Schnyder */
+  font-size: 22px;
+  line-height: 1.4;
+}
+
+.newsletter {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 8px 0 0;
+}
+
+.newsletter input {
+  font: inherit;
+  color: var(--ink);
+  background: var(--yellow);
+  border: 1px solid var(--black);
+  border-radius: var(--radius-pill);
+  padding: 14px 22px;
+  min-width: min(320px, 100%);
+  transition: background-color 0.2s ease;
+}
+
+.newsletter input:focus {
+  outline: none;
+  background: var(--white);
+}
+
+.stats {
+  display: flex;
+  justify-content: center;
+  gap: 72px;
+  flex-wrap: wrap;
+  margin: 40px 0 8px;
+}
+
+.stat {
+  text-align: center;
+}
+
+.stat-num {
+  display: block;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(3rem, 7vw, 5rem);
+  line-height: 1;
+}
+
+.stat-label {
+  display: block;
+  margin-top: 8px;
+  font-size: 15px;
+}
+
+.testimonial {
+  margin: 0 auto;
+  max-width: 620px;
+  text-align: center;
+}
+
+.testimonial .stars {
+  font-size: 22px;
+  letter-spacing: 0.2em;
+  margin-bottom: 10px;
+}
+
+.testimonial blockquote {
+  margin: 0 0 14px;
+  font-family: var(--font-display);
+  font-size: clamp(1.3rem, 2.6vw, 1.8rem);
+  line-height: 1.4;
+}
+
+.testimonial figcaption {
+  font-size: 15px;
+  font-weight: 500;
 }
 
 .cards {
@@ -298,6 +374,37 @@ p {
 
 .card p {
   margin: 0;
+  font-family: var(--font-display);   /* like the live site's service copy */
+  font-size: 19px;
+  line-height: 1.45;
+}
+
+/* ----- Home text blocks (Past projects / working on / Stay updated) ------ */
+
+.home-block {
+  max-width: 900px;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.home-block h2 {
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+}
+
+.home-block p {
+  font-family: var(--font-display);   /* live site renders its copy in Schnyder */
+  font-size: clamp(1.15rem, 2.4vw, 1.75rem);
+  line-height: 1.4;
+  margin-bottom: 0;
+}
+
+.home-block a {
+  color: inherit;
+}
+
+.home-block a:hover {
+  text-decoration: none;
+  border-bottom: 1.5px solid currentColor;
 }
 
 .section-cta {
@@ -445,7 +552,9 @@ p {
 .coe p {
   max-width: 620px;
   margin: 0 auto 36px;
-  font-size: 18px;
+  font-family: var(--font-display);   /* live-site copy in Schnyder */
+  font-size: 22px;
+  line-height: 1.4;
 }
 
 .coe .address {

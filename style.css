@@ -2513,7 +2513,7 @@ p {
   font-size: clamp(2rem, 4.6vw, 3.4rem);
 }
 
-.coe p {
+.coe p:not(.address) {
   max-width: 860px;
   margin: 0 auto 36px;
   font-family: var(--font-display);

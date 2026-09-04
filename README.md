@@ -10,6 +10,16 @@ Site content, design, images and text are © SpaceA S.r.l. Società Benefit
 
 ## Pages
 
+Two builds of the same site live in this repo:
+
+- **`spacea.html`** — the whole site as **one HTML document** (plus the
+  `assets/` and `_astro-1761032302980/` folders next to it). All five pages are
+  embedded as sections and a small hash router switches between them
+  (`#/home`, `#/code-of-ethics`, `#/contact-us`, `#/servizi`, `#/progetti`),
+  with the correct nav item highlighted per page. No hydration JavaScript runs.
+- The multi-page build — one directory per page, used by the GitHub Pages
+  deployment (Jekyll-free via `.nojekyll`, relative paths, deploy workflow):
+
 | Path | Source |
 | --- | --- |
 | `/` | `index.html` |
@@ -18,12 +28,12 @@ Site content, design, images and text are © SpaceA S.r.l. Società Benefit
 | `/progetti/` | `progetti/index.html` |
 | `/code-of-ethics/` | `code-of-ethics/index.html` (added to the mirror: heading, blurb and a download button for the PDF) |
 
-All assets (Astro CSS/JS bundles, fonts, logos, Unsplash imagery, the Code of
-Ethics PDF, background video) are stored locally and referenced with relative
-paths. Hostinger analytics/cookie tracking and the Cloudflare email-obfuscation
-loader were stripped; protected email links were decoded into plain `mailto:`;
-the site's canonical-domain redirect (which bounced the local copy to
-spacea.ai) is disabled.
+All assets (CSS/JS bundles, fonts, logos, Unsplash imagery, the Code of Ethics
+PDF) are stored locally and referenced with relative paths. Hostinger
+analytics/cookie tracking and the Cloudflare email-obfuscation loader were
+stripped; protected email links were decoded into plain `mailto:`; the site's
+canonical-domain redirect (which bounced the local copy to spacea.ai) is
+disabled.
 
 ## Deploy on GitHub Pages
 

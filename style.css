@@ -143,13 +143,12 @@ p {
   top: 0;
   z-index: 100;
   background: var(--yellow);
-  padding: 22px 0;
-  transition: box-shadow 0.25s ease, padding 0.25s ease;
+  padding: 30px 0;            /* live: header height 97px */
+  transition: box-shadow 0.25s ease;
 }
 
 .site-header.is-scrolled {
   box-shadow: 0 1px 0 rgba(13, 20, 26, 0.18);
-  padding: 14px 0;
 }
 
 .site-header .container {
@@ -176,25 +175,14 @@ p {
 }
 
 .nav a {
-  position: relative;
   text-decoration: none;
   padding: 4px 0;
 }
 
-.nav a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 100%;
-  bottom: 0;
-  height: 1.5px;
-  background: currentColor;
-  transition: right 0.25s var(--ease-slide);
-}
-
-.nav a:hover::after,
-.nav a.is-active::after {
-  right: 0;
+.nav a:hover,
+.nav a.is-active {
+  text-decoration: underline;
+  text-underline-offset: 7px; /* live: underline offset 7px */
 }
 
 .nav a.is-active {
@@ -227,31 +215,44 @@ p {
   padding: 72px 0;
 }
 
-/* ----- Hero (home) -------------------------------------------------------- */
+/* ----- Hero (home) — geometry from the live site -------------------------- */
 
 .hero {
-  padding: 88px 0 56px;
+  min-height: 1079px;         /* live block min-height */
+  padding-top: 131px;         /* logo sits 131px below the header */
   text-align: center;
 }
 
-.hero h1 {
-  font-size: clamp(2.1rem, 5.4vw, 4rem);   /* live: 64px desktop / 40px mobile */
-  margin-bottom: 0.45em;
-}
-
-.hero .hero-sub {
-  font-size: clamp(1.4rem, 3.4vw, 2.5rem);
-}
-
 .hero-logo {
-  margin: 56px auto 0;
-  max-width: min(560px, 78vw);
+  width: 660px;               /* live: 660×173 desktop, 282×74 mobile */
+  max-width: 88vw;
+  margin: 0 auto;
+}
+
+.hero-lines {
+  margin-top: 200px;          /* live: text box starts 200px under the logo */
+}
+
+.hero h1 {
+  font-size: 64px;            /* live site-wide h1: 64px desktop */
+  line-height: 1.3;
+  color: var(--black);
+  margin: 0;
+}
+
+.hero-lines h1 + h1 {
+  margin-top: 50px;           /* live box: two 83px lines + 50px gap = 216px */
+}
+
+.hero-tagline {
+  margin: 160px 0 48px;       /* live: 160px under the lines, 48px below */
+  font-size: 64px;
 }
 
 /* ----- Service cards (servizi) ------------------------------------------- */
 
 .page-title {
-  font-size: clamp(1.9rem, 4.4vw, 3.2rem);
+  font-size: 64px;            /* live site h1 size */
   text-align: center;
 }
 
@@ -380,22 +381,39 @@ p {
 }
 
 /* ----- Home text blocks (Past projects / working on / Stay updated) ------ */
+/* Sizes and block heights from the live site */
 
 .home-block {
-  max-width: 900px;
-  margin-inline: auto;
   text-align: center;
 }
 
-.home-block h2 {
-  font-size: clamp(1.8rem, 4vw, 2.8rem);
+.home-past {
+  min-height: 610px;          /* live block min-height */
+  padding-top: 17px;
+}
+
+.home-working {
+  min-height: 809px;
+  padding-top: 24px;
+}
+
+.home-stay {
+  min-height: 827px;
+  padding-top: 24px;
+}
+
+.home-block h1 {
+  font-size: 64px;            /* live: site h1 */
+  line-height: 1.3;
+  margin: 0 0 34px;
 }
 
 .home-block p {
-  font-family: var(--font-display);   /* live site renders its copy in Schnyder */
-  font-size: clamp(1.15rem, 2.4vw, 1.75rem);
-  line-height: 1.4;
-  margin-bottom: 0;
+  font-family: var(--font-display);   /* live renders its copy in Schnyder */
+  font-weight: 700;
+  font-size: 40px;            /* live: 40px desktop / 30px mobile */
+  line-height: 1.3;
+  margin: 0;
 }
 
 .home-block a {
@@ -405,6 +423,22 @@ p {
 .home-block a:hover {
   text-decoration: none;
   border-bottom: 1.5px solid currentColor;
+}
+
+.social-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 91px;                /* live icon box: 91×91 */
+  height: 91px;
+  margin-top: 96px;           /* live: icon 480px from block top */
+  color: var(--black);
+  transition: transform 0.25s var(--ease-slide), opacity 0.2s ease;
+}
+
+.social-icon:hover {
+  transform: scale(1.08);
+  opacity: 0.8;
 }
 
 .section-cta {
@@ -480,7 +514,8 @@ p {
 }
 
 .contact-head h1 {
-  font-size: clamp(1.8rem, 4vw, 2.9rem);
+  font-size: 40px;            /* live contact h1: 40px desktop / 30px mobile */
+  line-height: 1.3;
 }
 
 .contact-form {
@@ -535,7 +570,7 @@ p {
   text-align: center;
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: clamp(1.1rem, 2vw, 1.5rem);
+  font-size: 24px;            /* live contact address: 24px desktop / 16px mobile */
   line-height: 1.5;
 }
 
@@ -561,43 +596,47 @@ p {
   margin-top: 64px;
 }
 
-/* ----- Footer --------------------------------------------------------------- */
-
-.site-footer {
-  padding: 40px 0 88px;
-  text-align: center;
-}
-
-.site-footer img {
-  width: min(200px, 40vw);
-  margin: 0 auto 20px;
-}
-
-.site-footer p {
-  margin: 0;
-  font-size: 14px;
-}
-
-/* ----- Reveal-on-scroll animation (live site "slide" feel) ---------------- */
+/* ----- Reveal animation — exact values from the live site ----------------- */
+/* Hostinger "slide": elements sit 20% of their height down, invisible, and
+   slide to rest over .65s with a .1s delay once they enter the viewport. */
 
 .reveal {
   opacity: 0;
-  transform: translateY(26px);
-  transition: opacity 0.7s var(--ease-slide), transform 0.7s var(--ease-slide);
-  transition-delay: var(--reveal-delay, 0s);
-  will-change: opacity, transform;
+  transform: translateY(20%);
+  transition-property: transform, opacity;
+  transition-duration: 0.65s;
+  transition-timing-function: ease;
+  transition-delay: 0.1s;
+  will-change: transform, opacity;
 }
 
 .reveal.is-visible {
   opacity: 1;
-  transform: translateY(0);
+  transform: translate(0);
+}
+
+/* ----- Footer --------------------------------------------------------------- */
+
+.site-footer {
+  padding: 24px 0 40px;
+}
+
+.site-footer .container {
+  display: flex;
+  justify-content: flex-end;  /* live: copyright sits right-aligned */
+}
+
+.site-footer p {
+  margin: 0;
+  font-size: 14px;            /* live: 14px body-small */
+  line-height: 1.3;
 }
 
 /* ----- Responsive ----------------------------------------------------------- */
 
 @media (max-width: 920px) {
   .site-header {
-    padding: 16px 0;
+    padding: 24px 0;          /* live mobile header height 70px */
   }
 
   .site-header .container {
@@ -606,16 +645,77 @@ p {
   }
 
   .brand img {
-    width: 104px;
+    width: 80px;              /* live: 80.5px mobile */
   }
 
   .nav {
-    gap: 20px;                 /* live: 20px mobile spacing */
+    gap: 20px;                /* live: 20px mobile spacing */
     font-size: 15px;
   }
 
   .hero {
-    padding: 56px 0 40px;
+    min-height: 548px;        /* live mobile block min-height */
+    padding-top: 46px;
+  }
+
+  .hero-logo {
+    width: 282px;             /* live mobile logo: 282×74 */
+  }
+
+  .hero-lines {
+    margin-top: 45px;
+  }
+
+  .hero h1 {
+    font-size: 32px;          /* live mobile hero h1 */
+  }
+
+  .hero-lines h1 + h1 {
+    margin-top: 24px;
+  }
+
+  .hero-tagline {
+    font-size: 30px;          /* live mobile tagline */
+    margin: 78px 0 24px;
+  }
+
+  .home-past {
+    min-height: 838px;
+    padding-top: 64px;
+  }
+
+  .home-working {
+    min-height: 907px;
+    padding-top: 38px;
+  }
+
+  .home-stay {
+    min-height: 872px;
+    padding-top: 24px;
+  }
+
+  .home-block h1 {
+    font-size: 40px;          /* live mobile h1 */
+  }
+
+  .home-block p {
+    font-size: 30px;          /* live mobile paragraph */
+  }
+
+  .page-title {
+    font-size: 40px;          /* live mobile h1 */
+  }
+
+  .contact-head h1 {
+    font-size: 30px;          /* live mobile contact h1 */
+  }
+
+  .address {
+    font-size: 16px;          /* live mobile address */
+  }
+
+  .social-icon {
+    margin-top: 56px;
   }
 
   .cards {

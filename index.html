@@ -20,14 +20,14 @@
   <link rel="preload" href="assets/fonts/montserrat-500-latin.woff2" as="font" type="font/woff2" crossorigin>
 
   <!-- Preload the hero image -->
-  <link rel="preload" href="assets/logo/logo_spacea_ai.png" as="image">
+  <link rel="preload" href="assets/logo/spacea-logo.png" as="image">
 </head>
 <body>
 
   <header class="site-header" id="siteHeader">
     <div class="container">
       <a class="brand" href="#/home" aria-label="SpaceA home">
-        <img src="assets/logo/logo_spacea_ai.png" alt="SpaceA logo" width="276" height="73">
+        <img src="assets/logo/spacea-logo.png" alt="SpaceA logo" width="276" height="67">
       </a>
       <nav class="nav" aria-label="Main">
         <a href="#/home" data-route="home">Home</a>
@@ -43,7 +43,7 @@
     <section class="page" data-route="home" data-title="SpaceA: Arte, Architettura e Nuove tecnologie | SpaceA">
 
       <div class="container hero">
-        <img class="hero-logo reveal" src="assets/logo/logo_spacea_ai.png" alt="SpaceA">
+        <img class="hero-logo reveal" src="assets/logo/spacea-logo.png" alt="SpaceA">
         <div class="hero-lines">
           <h1 class="reveal">ART, ARCHITECTURE, AI</h1>
           <h1 class="reveal">(and other cool projects that don't start with A)</h1>
@@ -85,7 +85,18 @@
         <a class="social-icon reveal" href="https://www.instagram.com/spacea.ai"
            target="_blank" rel="noopener" aria-label="SpaceA on Instagram">
           <svg viewBox="0 0 24 24" width="44" height="44" fill="currentColor" aria-hidden="true">
-            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6 6 0 100 12 6 6 0 000-12zm0 9.9a3.9 3.9 0 110-7.8 3.9 3.9 0 010 7.8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+            <path d="
+            M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.64
+            5.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1
+            .644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265
+            -.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-
+            .057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98
+             6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.
+            98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618
+             6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-
+            6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6 6 0 100 12 6 6 0 000-12zm0 9.
+            9a3.9 3.9 0 110-7.8 3.9 3.9 0 010 7.8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 00
+            0-2.881z"/>
           </svg>
         </a>
       </div>
@@ -318,7 +329,6 @@
 
   <footer class="site-footer">
     <div class="container">
-      <img src="assets/logo/logo_spacea_ai.png" alt="SpaceA">
       <p>&copy; 2025. SpaceA S.r.l. Società Benefit - All rights reserved.</p>
     </div>
   </footer>
@@ -384,6 +394,54 @@
       /* Header gains a hairline once the page is scrolled. */
       function onScroll() {
         header.classList.toggle("is-scrolled", window.scrollY > 8);
+      }
+
+      /* Contact + request forms open a pre-filled email in the user's mail
+         client (Hostinger's form backend is not available to a static copy). */
+      function wireMailto(form, buildHref) {
+        form.addEventListener("submit", function (event) {
+          event.preventDefault();
+          var data = new FormData(form);
+          var href = buildHref(data);
+          if (href) {
+            window.location.href = href;
+          }
+        });
+      }
+
+      var CONTACT_EMAIL = "andrea@spacea.ai";
+
+      var contactForm = document.querySelector(".contact-form");
+      if (contactForm) {
+        wireMailto(contactForm, function (data) {
+          var name = String(data.get("name") || "").trim();
+          var email = String(data.get("email") || "").trim();
+          var message = String(data.get("message") || "").trim();
+          var subject = "Message from the SpaceA website" +
+            (name ? " — " + name : "");
+          var body = message + "\n\n— \n" +
+            (name ? "Name: " + name + "\n" : "") +
+            (email ? "Email: " + email + "\n" : "");
+          return "mailto:" + CONTACT_EMAIL +
+            "?subject=" + encodeURIComponent(subject) +
+            "&body=" + encodeURIComponent(body);
+        });
+      }
+
+      var newsletter = document.querySelector(".newsletter");
+      if (newsletter) {
+        wireMailto(newsletter, function (data) {
+          var email = String(data.get("email") || "").trim();
+          if (!email) {
+            return null;
+          }
+          return "mailto:" + CONTACT_EMAIL +
+            "?subject=" +
+            encodeURIComponent("Richiesta informazioni — SpaceA") +
+            "&body=" + encodeURIComponent(
+              "Ciao SpaceA,\n\nvi scrivo da " + email +
+              " e vorrei ricevere maggiori informazioni.\n");
+        });
       }
 
       window.addEventListener("hashchange", show);

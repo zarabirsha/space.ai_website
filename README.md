@@ -53,6 +53,10 @@ open index.html               # file:// — works too
 
 ## Notes
 
-- The contact form renders but does not submit (no backend in a static copy).
+- Fonts are embedded in `style.css` as data URIs so the page renders
+  identically when opened directly from disk (`file://`) — browsers
+  CORS-gate font files, and local files cannot pass that check.
+- The contact and request forms open a pre-filled email to
+  andrea@spacea.ai (no backend available in a static copy).
 - `_mirror_work/` (gitignored) holds the scripts that produced the original
   scrape and rebuilds; it is not part of the site.

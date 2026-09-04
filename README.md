@@ -25,7 +25,6 @@ assets/
 | Route | Content |
 | --- | --- |
 | `#/home` | Hero — ART, ARCHITECTURE, AI / MULTIDISCIPLINARY OFFICE BASED IN MILAN |
-| `#/servizi` | Servizi Creativi Innovativi — three service cards + CTA |
 | `#/progetti` | Privacy Policy |
 | `#/contact-us` | Contact form (Name, Email, Message) + address |
 | `#/code-of-ethics` | Codice Etico blurb + PDF download button |

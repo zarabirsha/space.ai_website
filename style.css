@@ -2161,7 +2161,7 @@ body {
   color: var(--ink);
   font-family: var(--font-ui);
   font-size: 16px;
-  font-weight: 400;
+  font-weight: 500;           /* heavier overall, as requested */
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   min-height: 100vh;
@@ -2182,6 +2182,7 @@ h2,
 h3 {
   font-family: var(--font-display);
   font-weight: 700;   /* synthesized from the Light cut, as on the live site */
+  -webkit-text-stroke: 0.3px currentColor;   /* slightly heavier display ink */
   line-height: 1.3;
   margin: 0 0 0.6em;
   letter-spacing: 0.01em;
@@ -2309,140 +2310,6 @@ p {
   font-size: 64px;
 }
 
-/* ----- Service cards (servizi) ------------------------------------------- */
-
-.page-title {
-  font-size: 64px;            /* live site h1 size */
-  text-align: center;
-}
-
-.page-intro {
-  max-width: 640px;
-  margin: 0 auto 56px;
-  text-align: center;
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 24px;
-  line-height: 1.4;
-}
-
-.newsletter {
-  display: flex;
-  gap: 12px;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin: 8px 0 0;
-}
-
-.newsletter input {
-  font: inherit;
-  color: var(--ink);
-  background: var(--yellow);
-  border: 1px solid var(--black);
-  border-radius: var(--radius-pill);
-  padding: 14px 22px;
-  min-width: min(320px, 100%);
-  transition: background-color 0.2s ease;
-}
-
-.newsletter input:focus {
-  outline: none;
-  background: var(--white);
-}
-
-.stats {
-  display: flex;
-  justify-content: center;
-  gap: 72px;
-  flex-wrap: wrap;
-  margin: 40px 0 8px;
-}
-
-.stat {
-  text-align: center;
-}
-
-.stat-num {
-  display: block;
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: clamp(3rem, 7vw, 5rem);
-  line-height: 1;
-}
-
-.stat-label {
-  display: block;
-  margin-top: 8px;
-  font-size: 15px;
-}
-
-.testimonial {
-  margin: 0 auto;
-  max-width: 620px;
-  text-align: center;
-}
-
-.testimonial .stars {
-  font-size: 22px;
-  letter-spacing: 0.2em;
-  margin-bottom: 10px;
-}
-
-.testimonial blockquote {
-  margin: 0 0 14px;
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 30px;
-  line-height: 1.3;
-}
-
-.testimonial figcaption {
-  font-size: 15px;
-  font-weight: 500;
-}
-
-.cards {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-}
-
-.card {
-  border: 1.5px solid var(--black);
-  border-radius: 20px;
-  padding: 28px 24px 24px;
-  background: transparent;
-  transition: background-color 0.25s ease, transform 0.25s var(--ease-slide);
-}
-
-.card:hover {
-  background: rgba(255, 255, 255, 0.5);
-  transform: translateY(-4px);
-}
-
-.card .card-num {
-  font-family: var(--font-ui);
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  display: block;
-  margin-bottom: 14px;
-}
-
-.card h2 {
-  font-size: clamp(1.4rem, 2.4vw, 1.9rem);
-  margin-bottom: 0.4em;
-}
-
-.card p {
-  margin: 0;
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 22px;
-  line-height: 1.4;
-}
-
 /* ----- Home text blocks (Past projects / working on / Stay updated) ------ */
 /* Sizes and block heights from the live site */
 
@@ -2472,8 +2339,9 @@ p {
 }
 
 .home-block p {
-  font-family: var(--font-display);   /* live renders its copy in Schnyder */
+  font-family: var(--font-display);
   font-weight: 700;
+  -webkit-text-stroke: 0.3px currentColor;
   font-size: 40px;            /* live: 40px desktop / 30px mobile */
   line-height: 1.3;
   margin: 0;
@@ -2504,11 +2372,6 @@ p {
   opacity: 0.8;
 }
 
-.section-cta {
-  text-align: center;
-  margin-top: 56px;
-}
-
 /* ----- Buttons ------------------------------------------------------------- */
 
 .btn {
@@ -2517,7 +2380,7 @@ p {
   color: var(--white);
   font-family: var(--font-ui);
   font-size: 16px;
-  font-weight: 400;
+  font-weight: 500;
   line-height: normal;
   text-decoration: none;
   border: 1px solid var(--ink);
@@ -2539,6 +2402,7 @@ p {
   max-width: 760px;
   margin-inline: auto;
   font-size: 16px;
+  font-weight: 500;
   line-height: 1.65;
 }
 
@@ -2577,6 +2441,7 @@ p {
 }
 
 .contact-head h1 {
+  -webkit-text-stroke: 0.3px currentColor;
   font-size: 40px;            /* live contact h1: 40px desktop / 30px mobile */
   line-height: 1.3;
 }
@@ -2633,6 +2498,7 @@ p {
   text-align: center;
   font-family: var(--font-display);
   font-weight: 700;
+  -webkit-text-stroke: 0.3px currentColor;
   font-size: 24px;            /* live contact address: 24px desktop / 16px mobile */
   line-height: 1.5;
 }
@@ -2648,11 +2514,12 @@ p {
 }
 
 .coe p {
-  max-width: 620px;
+  max-width: 860px;
   margin: 0 auto 36px;
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 30px;
+  -webkit-text-stroke: 0.3px currentColor;
+  font-size: 40px;            /* same as the contact section headings */
   line-height: 1.3;
 }
 
@@ -2687,7 +2554,8 @@ p {
 
 .site-footer .container {
   display: flex;
-  justify-content: flex-end;  /* live: copyright sits right-aligned */
+  justify-content: center;
+  text-align: center;
 }
 
 .site-footer p {
@@ -2766,11 +2634,8 @@ p {
     font-size: 30px;          /* live mobile paragraph */
   }
 
-  .page-title {
-    font-size: 40px;          /* live mobile h1 */
-  }
-
   .contact-head h1 {
+  -webkit-text-stroke: 0.3px currentColor;
     font-size: 30px;          /* live mobile contact h1 */
   }
 
@@ -2780,10 +2645,6 @@ p {
 
   .social-icon {
     margin-top: 56px;
-  }
-
-  .cards {
-    grid-template-columns: 1fr;
   }
 
   .contact-form {
